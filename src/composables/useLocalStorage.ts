@@ -1,9 +1,8 @@
 import { ref, watch } from 'vue'
-import type { Palette } from '@/types/types'
 
-export function useLocalStorage(key: string, initialValue: Palette) {
+export function useLocalStorage<T>(key: string, initialValue: T) {
   const storedValue = localStorage.getItem(key)
-  const value = ref<Palette>(storedValue ? JSON.parse(storedValue) : initialValue)
+  const value = ref<T>(storedValue ? JSON.parse(storedValue) : initialValue)
 
   watch(
     value,

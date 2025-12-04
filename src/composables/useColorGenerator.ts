@@ -1,4 +1,4 @@
-import type { Color, Palette } from '@/types/types'
+import type { Palette } from '@/types/types'
 
 export function useColorGenerator() {
   const generateRandomHex = (): string => {
